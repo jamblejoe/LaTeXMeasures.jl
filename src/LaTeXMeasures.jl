@@ -4,6 +4,7 @@ export INCHES_PER_PT
 export REVTEX_TEXT_WIDTH_PT, REVTEX_COLUMN_WIDTH_PT
 export FIG_PX_COLUMN, FIG_PX_TEXT
 export THESIS_WIDTH_PX
+export PLOTS_DEFAULTS_REVTEX
 
 const GOLDEN_MEAN = (sqrt(5)-1.0)/2.0         # Aesthetic ratio
 const INCHES_PER_PT = 1.0/72.27
@@ -22,5 +23,14 @@ const FIG_PX_COLUMN = REVTEX_COLUMN_WIDTH_PX .* [1, GOLDEN_MEAN]
 const THESIS_WIDTH_POINTS = 437.46112
 const THESIS_WIDTH_PX = THESIS_WIDTH_POINTS * INCHES_PER_PT * DPI
 
+const PLOTS_DEFAULTS_REVTEX = Dict(
+        :size=>FIG_PX_COLUMN,
+        :dpi=>300,
+        :border=>:box,
+        :grid=>:none,
+        :guidefontsize=>10,
+        :tickfontsize=>8,
+        :legendfontsize=>8,
+)
 
 end # module
